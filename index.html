@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<style>
+
+*{
+  padding:0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+.contairner{
+   width: 30%;
+   height: 78vh;
+   background-color: aqua;
+   margin: 100px auto;
+   text-align: center;
+   border-radius: 20px;
+   padding: 10px;
+    
+
+}
+.lable{
+  background-color: aliceblue;
+  width: 90%;
+  padding: 8px;
+  border-radius: 15px;
+ margin: 10px auto;
+ border: 1px solid gray;
+ 
+}
+.display{
+  text-align: right;
+  width: 90%;
+  color: aliceblue;
+  font-size: 20px;
+}
+.hall-button{
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto;
+   display: grid;
+  grid-template-columns: auto auto auto auto;
+  text-align: center;
+
+}
+.hall-button button {
+  width: 50px;
+  height: 48px;
+  border-radius: 15px;
+  font-size: 15px;
+  margin: 5px auto;
+  border: none;
+  background-color: whitesmoke;
+
+
+
+}
+#operator{
+background-color: #e78f06
+}
+
+#operator:hover{
+  background-color: grey;
+}
+
+</style>
+<body>
+  <div class="contairner">
+
+    <div class="lable"> 
+      <h2 >Welcome to Calculator</h2>
+    </div>
+<div class="content">
+<div class="display">
+  <h2 id="display">0</h2>
+</div>
+<div class="hall-button">
+<button id="top-action" onclick="Clear()" style="background-color: gray;" >AC</button>
+<button onclick="Delete('?')"id="T" style="background-color: gray;" >?</button>
+<button onclick="Cal('% ')" style="background-color: gray;">%</button>
+<button onclick="Cal('/')" style="background-color: #e78f06;" >/</button>
+<button onclick="Cal (1)" >1</button>
+<button onclick="Cal (2)">2</button>
+<button onclick="Cal(3)">3</button>
+<button  onclick="Cal('-')"id="operator" >-</button>
+<button  onclick="Cal(4)">4</button>
+<button onclick="Cal(5)">5</button>
+<button onclick="Cal(6)" >6</button>
+<button onclick="Cal('+')" id="operator">+</button>
+<button onclick="Cal(7)">7</button>
+<button onclick="Cal(8)">8</button>
+<button onclick="Cal(9)">9</button>
+<button  onclick="Cal('*')" id="operator">X</button>
+<button onclick="Cal(0)">0</button>
+<button onclick="Cal('00')">00</button>
+<button  onclick="Cal('.')" >.</button>
+<button onclick="total()" id="top-action" style="background-color: #e78f06;">=</button>
+</div>
+</div>
+  </div>
+
+</body>
+<script>
+  var display=document.getElementById('display');
+  function Cal(value){
+    display.innerHTML +=value;
+  }
+  function total(){
+    display.innerHTML=  eval(display.innerHTML);
+  }
+  function Clear(){
+    display.innerHTML= " ";
+  
+  }
+  function Delete(){
+
+    display.innerHTML= display.innerHTML.slice(0,-1);
+  }
+</script>
+</html>
